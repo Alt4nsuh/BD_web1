@@ -1,0 +1,94 @@
+/* Bai.css */
+
+.mainBai {
+  background-color: #BEF0FF;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  flex-shrink: 0;
+  background-color: #6DD7FD;
+}
+
+.secHead {
+  margin-top: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  flex-shrink: 0;
+  background-color: #61bfe1;
+    align-items: center;
+  transition: background-color 0.3s;
+}
+
+.secHead a {
+  margin: 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.secHead a:hover {
+  background-color: #6DD7FD;
+}
+
+.BaiBody {
+  background-color: #ffffff;
+  margin-top: 190px;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.TetEronhii,
+.TetShaardlaga,
+.TetMateral,
+.TetHolboo {
+  background: #BEF0FF;
+  width: 100%;
+  height: 580px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+/* Additional styling for TetEronhii, TetShaardlaga, TetMateral, TetHolboo can be added as needed */
+ /* Bai.css or your stylesheet */
+
+/* Set the styles for the scrollbar track (background) */
+body {
+  scrollbar-color: #6DD7FD #BEF0FF; /* Firefox */
+  scrollbar-width: thin; /* Firefox */
+
+  /* For Webkit browsers like Chrome and Safari */
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #6DD7FD;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #BEF0FF;
+  }
+}
