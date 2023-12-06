@@ -1,22 +1,12 @@
 import React from 'react';
-import '../Style/Bai.css';
+import './Bai.css';
 import { Link } from 'react-router-dom';
-
+import Header from '../Header/Header';
 function Bai() {
   return (
     <div className="mainBai">
-       <div className='head'>
-        <img src='/bd_web/src/Image/logo.png' alt='Logo' width='200' height='100' />
-        
-        {/* Use Link to navigate to /Bai */}
-        <Link to='/BaiHuvi'>Хувийн мэдээлэл шинжлэх</Link>
-        
-        {/* Use Link to navigate to /Bai */}
-        <Link to='/Bai'>Тэтгэлэг зарлах</Link>
-        
-        {/* Use Link to navigate to /Login */}
-        <Link to='/'>Гарах</Link>
-      </div>
+      <Header/>
+
       <div className='secHead'>
         <a href='#TetEronhii'>Тэтгэлгийн <br></br>ерөнхий <br></br>мэдээлэл</a>
         <a href='#TetShaardlaga'>Тэтгэлэгт <br></br>тавигдах <br></br>шаардлага</a>

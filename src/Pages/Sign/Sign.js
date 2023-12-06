@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../Style/Sign.css';
+import './Sign.css';
 
 function Sign() {
   return (
