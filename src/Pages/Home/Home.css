@@ -1,0 +1,126 @@
+
+.header {
+    z-index:1;
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content:space-between; /* Adjusted spacing between logo and links */
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    flex-shrink: 0;
+    background-color: #6DD7FD;
+    padding: 0 20px; /* Added padding for better spacing */
+    box-sizing: border-box; /* Ensures padding is included in the width */
+  }
+  
+  .head img {
+    margin-right: 20px; /* Adjusted margin for logo */
+  }
+  
+  .head a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .head a:hover {
+    background-color: #4DA9E5; /* Adjusted hover background color */
+  }
+  
+  .bidniiZorilgo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000203;
+    font-style: oblique;
+    background-color: rgba(255, 255, 255, 0.8); /* Background color with some opacity */
+    padding: 20px; /* Add padding for better readability */
+    border-radius: 10px; /* Add rounded corners */
+}
+.bidniiZorilgo p {
+  margin: 10px 0;
+}
+
+.bidniiZorilgo h2 {
+  margin-bottom: 10px;
+}
+
+  body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #44598f;
+            color: #000000;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 2em;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1em;
+            width: 300px;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: auto;
+        }
+
+        .member-info {
+            padding: 1em;
+        }
+
+        footer {
+          background-color: #000000;
+          color: #fff;
+          padding: 20px 0;
+          text-align: center;
+      }
+      
+      .footer-container {
+          display: flex;
+          justify-content: space-around;
+      }
+      
+      .footer-content {
+          max-width: 300px;
+      }
+      
+      .footer-content h3 {
+          border-bottom: 2px solid #fff;
+          padding-bottom: 10px;
+      }
+      
+      .footer-content p {
+          margin: 5px 0;
+      }
+      
+      .footer-content a {
+          color: #fff;
+          text-decoration: none;
+      }
+      
+      .footer-content a:hover {
+          text-decoration: underline;
+      }        

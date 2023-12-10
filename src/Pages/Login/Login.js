@@ -11,6 +11,7 @@ function Login() {
           <input className='inputLog' type='text' placeholder='Нууц '></input>
           <a>Нууц үгээ мартсан </a>
           <button><Link to="/Bai">Нэвтрэх</Link></button>
+          <button><Link to="/Home">Home</Link></button>
           <p>Бүртгэлгүй бол ..</p> <Link to="/sign">Бүртгүүлэх</Link>
         </form>
       </div>
