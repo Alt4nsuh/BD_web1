@@ -24,3 +24,4 @@ export const MainRoutes = () => {
     { path: '/Home', element: <Home /> },
     { path: '/Tetgeleg', element: <Tetgeleg /> },
   ]);
+}
