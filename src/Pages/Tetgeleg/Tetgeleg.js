@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Home.css';
 import './Tetgeleg.css';
 
 function Tetgeleg() {
@@ -10,7 +9,7 @@ function Tetgeleg() {
                 <img src='C:\A_Hicheel\Laravel\bd_web\src\Image\logo.png' alt='Logo' width='200' height='100' />
                 <Link to='/Home'>Нүүр</Link>
                 <a href='#'>Тэтгэлэг</a>
-                <a href='#'>Баг</a>
+                <Link to='/Home#our-team'>Баг</Link>
                 <Link to='/'>Нэвтрэх</Link>
             </div>
 
