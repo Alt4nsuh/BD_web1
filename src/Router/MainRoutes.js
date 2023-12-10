@@ -13,7 +13,7 @@ export const MainRoutes = () => {
         { path: '/sign', element: <Sign /> },
         { path: '/Bai', element: <Bai /> },
         { path: '/BaiHuvi', element: <BaiHuvi /> },
-        { path: '/BaiHuvi/edit', element: <Edit /> },
+        // { path: '/BaiHuvi/edit', element: <Edit /> },
 
 
     ]);

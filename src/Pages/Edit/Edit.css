@@ -1,20 +1,8 @@
-
-.Bai-body{
-  display: flex;
-  margin-top: 100px;
-}
-.leftBar {
-  flex: 1; 
-  background-color: #333; 
-  align-items: center;
- 
+/* Header.css */
+.head {
+  /* Add styles for the header container */
 }
 
-.rightBar {
-  flex: 1; 
-  background-color: #555; 
-  align-items: center;
-}
 .horizontal-section {
   display: flex;
   justify-content: space-between;
@@ -22,7 +10,7 @@
 }
 
 .ImgDev {
-  
+  margin-top: ;
   width: 100px; /* Adjust the width of each ImgDev div */
   height: 100vh; /* Adjust the height of each ImgDev div */
   background-color: #3d1f1f; /* Add a background color or other styles */
