@@ -3,9 +3,10 @@ import { useRoutes } from 'react-router-dom';
 import Bai from '../Pages/Bai/Bai';
 import BaiHuvi from '../Pages/BaiHuvi/BaiHuvi';
 import Edit from '../Pages/Edit/Edit';
+import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Sign from '../Pages/Sign/Sign';
-import Home from '../Pages/Home/Home';
+import Tetgeleg from '../Pages/Tetgeleg/Tetgeleg';
 
 export const MainRoutes = () => {
     return useRoutes([
@@ -15,5 +16,6 @@ export const MainRoutes = () => {
         { path: '/BaiHuvi', element: <BaiHuvi /> },
         { path: '/BaiHuvi/edit', element: <Edit /> },
         { path: '/Home', element: <Home /> },
+        { path: '/Tetgeleg', element: <Tetgeleg /> },
     ]);
 };

@@ -11,13 +11,13 @@ function Home() {
         <div className='MainHome'>
             <div className='header'>
                 <img src='C:\A_Hicheel\Laravel\bd_web\src\Image\logo.png' alt='Logo' width='200' height='100' />
-                <Link to='/'>Нүүр</Link>
-                <Link to='/'>Тэтгэлэг</Link>
-                <Link to='/#our-team'>Баг</Link>
+                <a href='#zorilgo'>Нүүр</a>
+                <Link to='/Tetgeleg'>Тэтгэлэг</Link>
+                <a href='#our-team'>Баг</a>
                 <Link to='/'>Нэвтрэх</Link>
             </div>
 
-            <div className='zorilgo'>
+            <div className='zorilgo' id="zorilgo">
                 <img src='https://niitlelch.mn/wp-content/uploads/2019/01/Ungariin-zasgiin-gazriin-tetgeleg.jpeg' alt='zorilgo' width='1524' height='800' />
                 <div className='bidniiZorilgo'>
                     <p>Бидний зорилго:</p>
@@ -28,7 +28,8 @@ function Home() {
                 </div>
             </div>
 
-            <header id="our-team">
+            <div id="our-team">
+            <header>
             <h1>Our Amazing Team</h1>
             </header>
 
@@ -65,7 +66,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-
+            </div>
             <footer>
         <div class="footer-container">
             <div class="footer-content">
@@ -91,5 +92,4 @@ function Home() {
         </div>
     );
 }
-
 export default Home;
