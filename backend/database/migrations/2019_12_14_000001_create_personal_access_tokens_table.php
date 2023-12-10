@@ -5,7 +5,10 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
-{
+{ public function down(): void
+    {
+        Schema::dropIfExists('personal_access_tokens');
+    }
     /**
      * Run the migrations.
      */
@@ -26,8 +29,5 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('personal_access_tokens');
-    }
+   
 };
