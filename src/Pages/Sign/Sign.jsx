@@ -11,8 +11,8 @@ function Sign() {
     h_gmail: '',
     h_bolovsrol_zereg: '', 
     h_mergejil: '', 
-    pass: '',
-    pass_confirmation: '',
+    password: '',
+    password_confirmation: '',
   });
 
   const handleChange = (e) => {
@@ -24,7 +24,7 @@ function Sign() {
       e.preventDefault();
 
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/sign', {
+        const response = await fetch('http://127.0.0.1:8000/api/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ function Sign() {
           />
           <input
             className='inputSig'
-            type='text'
+            type='email'
             name='h_gmail'
             placeholder='Майл'
             value={formData.h_gmail}
@@ -105,7 +105,7 @@ function Sign() {
           <input
             className='inputSig'
             type='password'
-            name='pass'
+            name='password'
             placeholder='Нууц'
             value={formData.pass}
             onChange={handleChange}
@@ -113,7 +113,7 @@ function Sign() {
           <input
             className='inputSig'
             type='password'
-            name='pass_confirmation'
+            name='password_confirmation'
             placeholder='Нууц давтах'
             value={formData.pass_confirmation}
             onChange={handleChange}

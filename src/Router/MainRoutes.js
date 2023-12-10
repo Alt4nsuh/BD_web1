@@ -1,4 +1,3 @@
-// MainRoutes.js
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import Bai from '../Pages/Bai/Bai';
@@ -8,20 +7,21 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Sign from '../Pages/Sign/Sign';
 import Tetgeleg from '../Pages/Tetgeleg/Tetgeleg';
-
+import Admin from '../Pages/Admin/Admin';
 export const MainRoutes = () => {
   return useRoutes([
-    { path: '/', element: <Login /> },
+    { path: '/Home', element: <Home /> },
+
     { path: '/sign', element: <Sign /> },
     { path: '/Bai', element: <Bai /> },
     {
-      path: '/BaiHuvi',
-      element: <BaiHuvi />,
+      path: '/BaiHuvi', element: <BaiHuvi />,
       children: [
         { path: 'edit', element: <Edit /> },
       ],
     },
-    { path: '/Home', element: <Home /> },
+    { path: '/login', element: <Login /> },
     { path: '/Tetgeleg', element: <Tetgeleg /> },
+    { path: '/admin', element: <Admin /> },
   ]);
 }

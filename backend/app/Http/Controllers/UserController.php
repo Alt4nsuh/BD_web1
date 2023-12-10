@@ -1,45 +1,104 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
-use illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    
-    public function registered(Request $request)
-{
-    $request->validate([
-        'h_ner' => 'required|string',
-        'h_gmail' => 'required|email|unique:Users,h_gmail',
-        'pass' => 'required|string'
-    ]);
+    public function index()
+    {
+        // You may add logic for retrieving and returning users here
+    }
 
-    try {
-        $User = new User();
-        $User->h_ner = $request->input('h_ner');
-        $User->h_ovog = $request->input('h_ovog');
-        $User->h_huis = $request->input('h_huis');
-        $User->h_utas = intval($request->input('h_utas')); 
-        $User->h_gmail = $request->input('h_gmail');
-        $User->h_bolovsrol_zereg = $request->input('h_bolovsrol_zereg');
-        $User->h_mergejil = $request->input('h_mergejil');
-        $User->pass = bcrypt($request->input('pass'));
-        $User->save();
-        
-        return response()->json(['message' => 'Registration successful'], 201);
-    } catch (\Exception $e) {
-        return response()->json(['message' => 'Registration failed', 'error' => $e->getMessage()], 500);
+    public function store(Request $request)
+    {
+        // Assuming you have corresponding fields in the request, adjust as needed
+        $user = User::create($request->all());
+        return response()->json($user, 201);
     }
-    }
-    public function login(Request $request){
+
+    public function signup(Request $request)
+    {
         $request->validate([
-            'h_gmail' => 'required|email|exists:Users',
-            'pass' => 'required|string'
+            'h_ovog' => 'required|string|max:255',
+            'h_ner' => 'required|string|max:255',
+            'h_huis' => 'required|string',
+            'h_gmail' => 'required|email|unique:users,h_gmail',
+            'h_utas' => 'required|string|max:20',
+            'h_bolovsrol_zereg' => 'required|string',
+            'h_mergejil' => 'required|string',
+            'password' => 'required|string|min:8|confirmed',
+            'password_confirmation' => 'required',
         ]);
 
+        $user = User::create([
+            'h_ovog' => $request->h_ovog,
+            'h_ner' => $request->h_ner,
+            'h_huis' => $request->h_huis,
+            'h_gmail' => $request->h_gmail,
+            'h_utas' => $request->h_utas,
+            'h_bolovsrol_zereg' => $request->h_bolovsrol_zereg,
+            'h_mergejil' => $request->h_mergejil,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return response()->json($user, 201);
     }
 
-    
+    public function login(Request $request)
+    {
+        $this->validate($request, [
+            'h_gmail' => 'required|email',
+            'password' => 'required|string',
+        ]);
+
+        if (Auth::attempt($request->only('h_gmail', 'password'))) {
+            $data = User::where('h_gmail', $request->h_gmail)->first();
+            return response()->json($data, 200);
+        } else {
+            // Authentication failed
+            return response()->json("нууц үг буруу", 404);
+        }
+        
+    }
+
+    public function getUser(Request $request)
+    {
+        $this->validate($request, [
+            'user_id' => 'exists:users,id'
+        ]);
+
+        $user = User::find($request->user_id);
+
+        return response()->json($user, 200);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        $request->validate([
+            'h_ovog' => 'required|string|max:255',
+            'h_ner' => 'required|string|max:255',
+            'h_gmail' => 'required|email|unique:users,h_gmail,' . $user->id,
+            'h_utas' => 'required|string|max:20',
+        ]);
+
+        $user->update([
+            'h_ovog' => $request->h_ovog,
+            'h_ner' => $request->h_ner,
+            'h_gmail' => $request->h_gmail,
+            'h_utas' => $request->h_utas,
+        ]);
+
+        return response()->json($user, 200);
+    }
 }

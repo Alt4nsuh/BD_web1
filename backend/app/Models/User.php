@@ -25,7 +25,8 @@ class User extends Authenticatable
         'h_gmail',
         'h_bolovsrol_zereg',
         'h_mergejil',
-        'pass',
+        'password',
+        'h_type',
     ];
 
     /**
