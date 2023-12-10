@@ -17,5 +17,7 @@ export const MainRoutes = () => {
         { path: '/BaiHuvi/edit', element: <Edit /> },
         { path: '/Home', element: <Home /> },
         { path: '/Tetgeleg', element: <Tetgeleg /> },
+
+
     ]);
 };
