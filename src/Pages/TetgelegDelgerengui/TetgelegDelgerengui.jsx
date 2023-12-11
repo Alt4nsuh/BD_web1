@@ -67,27 +67,34 @@ function TetgelegDelgerengui() {
             alt={`Image`}
           />
           <br></br>
+          <h1>Нэр:</h1>
           <div className="scholarship-name">{tetgeleg.tetgeleg_ner}</div>
+          <h1>Хугацаа:</h1>
           <div className="end-date">{tetgeleg.tetgeleg_hugatsaa}</div>
+          <h1>Дэлгэрэнгүй:</h1>
           <div className="description">{tetgeleg.tetgeleg_tuhai}</div>
+          <h1>Хамрах Хүрээ</h1>
           {tetgeleg.hamrah_huree.length > 0 &&
             tetgeleg.hamrah_huree.map((item, index) => (
               <div key={index} className="description">
                 {item}
               </div>
             ))}
+            <h1>Шалгуур:</h1>
           {tetgeleg.tawigdah_shaardlaga.length > 0 &&
             tetgeleg.tawigdah_shaardlaga.map((item, index) => (
               <div key={index} className="description">
                 {item}
               </div>
             ))}
+            <h1>Бүрдүүлэх материал:</h1>
           {tetgeleg.burduuleh_material.length > 0 &&
             tetgeleg.burduuleh_material.map((item, index) => (
               <div key={index} className="description">
                 {item}
               </div>
             ))}
+            <h1>Холбоо барих:</h1>
           {tetgeleg.holboo_barih.length > 0 &&
             tetgeleg.holboo_barih.map((item, index) => (
               <div key={index} className="description">
