@@ -90,13 +90,17 @@ function BaiHuvi() {
           <button onClick={() => setEdit(!edit)}>
             {!edit ? "Засах" : "Буцах"}
           </button>
-          {edit && <button>sda</button>}
+          {edit &&
+          
+          <button>Edit</button>}
         </div>
       </div>
-      
+      <div>
       <Scrollbars
       style={{ height: 300 }}
     >
+            <h1>Оруулсан Тэтгэлэг</h1>
+
       <div className="horizontal-section">
         {tetgeleg.map((item, index) => (
           <div key={index} className="ImgDev">
@@ -106,6 +110,7 @@ function BaiHuvi() {
         ))}
       </div>
     </Scrollbars>
+    </div>
     </div>
   );
 }

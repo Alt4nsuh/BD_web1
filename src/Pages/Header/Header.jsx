@@ -30,8 +30,10 @@ function Header() {
           <Link to="/Tetgeleg">Тэтгэлэг</Link>
           <a href="#our-team">Баг</a>
           {h_type === "hereglegch" && <Link to="/Profile">Хэрэглэгч</Link>}
-          {h_type === "admin" && <Link to="/admin">Админ</Link>}
-          {h_type === "" && <Link to="/login" onClick={logout}>Нэвтрэх</Link>}
+          {h_type === "admin" && <Link to="/admin">Админ</Link> }
+          {h_type === "admin" && <div onClick={logout}><Link to="/login">Гарах</Link></div>}
+          {h_type === "" &&           <div onClick={logout}><Link to="/login">Нэвтрэх</Link></div>
+}
         </div>
       )}
     </div>

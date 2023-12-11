@@ -9,21 +9,26 @@ import Login from '../Pages/Login/Login';
 import Sign from '../Pages/Sign/Sign';
 import Tetgeleg from '../Pages/Tetgeleg/Tetgeleg';
 import TetgelegDelgerengui from '../Pages/TetgelegDelgerengui/TetgelegDelgerengui';
+import BaiUpdate from '../Pages/BaiUpdate/BaiUpdate';
 export const MainRoutes = () => {
   return useRoutes([
-    { path: '/Home', element: <Home /> },
+    { path: "/Home", element: <Home /> },
 
-    { path: '/sign', element: <Sign /> },
-    { path: '/Bai', element: <Bai /> },
+    { path: "/sign", element: <Sign /> },
+    { path: "/Bai", element: <Bai /> },
     {
-      path: '/BaiHuvi', element: <BaiHuvi />,
-      children: [
-        { path: 'edit', element: <Edit /> },
-      ],
+      path: "/BaiHuvi",
+      element: <BaiHuvi />,
+      children: [{ path: "edit", element: <Edit /> }],
     },
-    { path: '/login', element: <Login /> },
-    { path: '/Tetgeleg', element: <Tetgeleg /> },
-    { path: '/admin', element: <Admin /> },
-    { path: '/TetgelegDelgerengui/:id', element: <TetgelegDelgerengui /> },
+    { path: "/login", element: <Login /> },
+    { path: "/Tetgeleg", element: <Tetgeleg /> },
+    { path: "/admin", element: <Admin /> },
+    { path: "/TetgelegDelgerengui/:id", element: <TetgelegDelgerengui /> },
+    { path: "/BaiUpdate", element: <BaiUpdate /> },
+    { path: "/Profile", element: <Profile /> },
+    { path: "/Profile/add-cv", element: <AddCV /> },
+    { path: "/Profile/control-cv", element: <ControlCV /> },
+    { path: "/Profile/edit-cv", element: <EditCV /> },
   ]);
 }
