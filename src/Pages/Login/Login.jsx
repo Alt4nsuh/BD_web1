@@ -29,7 +29,7 @@ function Login() {
 
       Cookies.set("h_id", data.id);
       Cookies.set("h_type", data.h_type);
-      navigator("/");
+      navigator("/Home");
       if (response.ok) {
         // if (formData.h_ner === 'admin' && formData.pass === 'adminPassword') {
         //   navigator('/admin');

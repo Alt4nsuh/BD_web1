@@ -21,7 +21,7 @@ function Header() {
 
           <Link to="/BaiHuvi">Хувийн мэдээлэл шинжлэх</Link>
           <Link to="/Bai">Тэтгэлэг зарлах</Link>
-          <Link to="/">Гарах</Link>
+          <div onClick={logout}><Link to="/">Гарах</Link></div>
         </div>
       ) : (
         <div className="header">
