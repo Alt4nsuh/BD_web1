@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Sign.css';
+import './BaiInsert.css';
 
-function Sign() {
+function BaiInsert() {
   const [formData, setFormData] = useState({
     h_ner: '',
     h_ovog: '', 
@@ -24,7 +24,7 @@ function Sign() {
       e.preventDefault();
 
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/signup', {
+        const response = await fetch('http://127.0.0.1:8000/api/BaiInsert', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -55,22 +55,8 @@ function Sign() {
             value={formData.h_ner}
             onChange={handleChange}
           />
-          <input
-            className='inputSig'
-            type='text'
-            name='h_ovog'
-            placeholder='Овог'
-            value={formData.h_ovog}
-            onChange={handleChange}
-          />
-          <input
-            className='inputSig'
-            type='text'
-            name='h_huis'
-            placeholder='Хүйс'
-            value={formData.h_huis}
-            onChange={handleChange}
-          />
+
+
           <input
             className='inputSig'
             type='text'
@@ -87,28 +73,14 @@ function Sign() {
             value={formData.h_gmail}
             onChange={handleChange}
           />
-          <input
-            className='inputSig'
-            type='text'
-            name='h_bolovsrol_zereg'
-            placeholder='Боловсрол зэрэг'
-            value={formData.h_bolovsrol_zereg}
-            onChange={handleChange}
-          />
-          <input
-            className='inputSig'
-            type='text'
-            name='h_mergejil'
-            placeholder='Мэргэжил'
-            value={formData.h_mergejil}
-            onChange={handleChange}
-          />
+
+
           <input
             className='inputSig'
             type='password'
             name='password'
             placeholder='Нууц'
-            value={formData.pass}
+            value={formData.password}
             onChange={handleChange}
           />
           <input
@@ -120,8 +92,6 @@ function Sign() {
             onChange={handleChange}
           />
           <button type="submit">Бүртгүүлэх</button>
-          <button onClick={()=>{navigator('/BaiInsert')}}>Байгууллагаар бүртгүүлэх</button>
-
           <p>Бүртгэлтэй бол ..</p> <Link className='aLink' to="/login">Нэвтрэх</Link>
         </form>
       </div>
@@ -129,4 +99,4 @@ function Sign() {
   );
 }
 
-export default Sign;
+export default BaiInsert;

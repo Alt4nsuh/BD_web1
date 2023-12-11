@@ -60,6 +60,26 @@ class UserController extends Controller
 
         return response()->json($user, 201);
     }
+    public function signup1(Request $request)
+    {
+        $request->validate([
+            
+            'h_ner' => 'required|string|max:255',
+            'h_gmail' => 'required|email|unique:users,h_gmail',
+            'h_utas' => 'required|string|max:20',
+            'password' => 'required|string|min:8|confirmed',
+            'password_confirmation' => 'required',
+        ]);
+
+        $user = User::create([
+            'h_ner' => $request->h_ner,
+            'h_gmail' => $request->h_gmail,
+            'h_utas' => $request->h_utas,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return response()->json($user, 201);
+    }
 
     public function login(Request $request)
     {
@@ -77,6 +97,32 @@ class UserController extends Controller
         }
 
     }
+    
+public function update(Request $request, $id)
+{
+    // Find the user by ID
+    $user = User::find($id);
+
+    // Check if the user exists
+    if (!$user) {
+        return response()->json(['error' => 'User not found'], 404);
+    }
+
+    $request->validate([
+        'h_ner' => 'required|string|max:255',
+        'h_utas' => 'required|string|max:255',
+        'h_gmail' => 'required|email',
+    ]);
+
+    $user->update([
+        'h_ner' => $request->h_ner,
+        'h_utas' => $request->h_utas,
+        'h_gmail' => $request->h_gmial,
+    ]);
+
+    return response()->json($user, 200);
+}
+
 
     public function getUser(Request $request)
     {
@@ -89,28 +135,28 @@ class UserController extends Controller
         return response()->json($user, 200);
     }
 
-    public function update(Request $request, $id)
-    {
-        $user = User::find($id);
+    // public function update(Request $request, $id)
+    // {
+    //     $user = User::find($id);
 
-        if (!$user) {
-            return response()->json(['error' => 'User not found'], 404);
-        }
+    //     if (!$user) {
+    //         return response()->json(['error' => 'User not found'], 404);
+    //     }
 
-        $request->validate([
-            'h_ovog' => 'required|string|max:255',
-            'h_ner' => 'required|string|max:255',
-            'h_gmail' => 'required|email|unique:users,h_gmail,' . $user->id,
-            'h_utas' => 'required|string|max:20',
-        ]);
+    //     $request->validate([
+    //         'h_ovog' => 'required|string|max:255',
+    //         'h_ner' => 'required|string|max:255',
+    //         'h_gmail' => 'required|email|unique:users,h_gmail,' . $user->id,
+    //         'h_utas' => 'required|string|max:20',
+    //     ]);
 
-        $user->update([
-            'h_ovog' => $request->h_ovog,
-            'h_ner' => $request->h_ner,
-            'h_gmail' => $request->h_gmail,
-            'h_utas' => $request->h_utas,
-        ]);
+    //     $user->update([
+    //         'h_ovog' => $request->h_ovog,
+    //         'h_ner' => $request->h_ner,
+    //         'h_gmail' => $request->h_gmail,
+    //         'h_utas' => $request->h_utas,
+    //     ]);
 
-        return response()->json($user, 200);
-    }
+    //     return response()->json($user, 200);
+    // }
 }
