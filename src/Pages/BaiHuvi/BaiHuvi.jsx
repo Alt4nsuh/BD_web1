@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./BaiHuvi.css";
 import Header from "../Header/Header";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../Image/logo.png";
 import Cookies from "js-cookie";
 import { Scrollbars } from "react-custom-scrollbars";
@@ -10,6 +10,7 @@ function BaiHuvi() {
   const [bai, setBai] = useState([]);
   const [tetgeleg, setTetgeleg] = useState([]);
   const [edit, setEdit] = useState(false);
+  const navigator = useNavigate();
   const id = Cookies.get("h_id");
 
   useEffect(() => {
@@ -92,7 +93,7 @@ function BaiHuvi() {
           </button>
           {edit &&
           
-          <button>Edit</button>}
+          <button onClick={()=>navigator('/BaiUpdate/'+bai.id)}>Edit</button>}
         </div>
       </div>
       <div>
