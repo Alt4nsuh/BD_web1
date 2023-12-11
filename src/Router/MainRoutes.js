@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import Admin from "../Pages/Admin/Admin";
 import Bai from "../Pages/Bai/Bai";
 import BaiHuvi from "../Pages/BaiHuvi/BaiHuvi";
+import BaiUpdate from "../Pages/BaiUpdate/BaiUpdate";
 import Edit from "../Pages/Edit/Edit";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -16,7 +17,7 @@ import TetgelegDelgerengui from "../Pages/TetgelegDelgerengui/TetgelegDelgerengu
 
 export const MainRoutes = () => {
   return useRoutes([
-    { path: "/Home", element: <Home /> },
+    { path: "/", element: <Home /> },
 
     { path: "/sign", element: <Sign /> },
     { path: "/Bai", element: <Bai /> },
@@ -29,6 +30,9 @@ export const MainRoutes = () => {
     { path: "/Tetgeleg", element: <Tetgeleg /> },
     { path: "/admin", element: <Admin /> },
     { path: "/TetgelegDelgerengui/:id", element: <TetgelegDelgerengui /> },
+
+    { path: "/BaiUpdate", element: <BaiUpdate /> },
+
     { path: "/Profile", element: <Profile /> },
     { path: "/Profile/add-cv", element: <AddCV /> },
     { path: "/Profile/control-cv", element: <ControlCV /> },
