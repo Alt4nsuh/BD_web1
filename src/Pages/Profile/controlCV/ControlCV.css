@@ -1,0 +1,50 @@
+.controlcv {
+  height: 100%;
+  margin-top: 100px;
+  width: 80%;
+  position: fixed;
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
+  background-color: white;
+  /* overflow-x: hidden; */
+  margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+  padding: 30px 30px;
+}
+
+.controlcard {
+  margin-left: 20px;
+  width: 280px;
+  height: 160px;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  /* align-items: center; */
+}
+
+.controlcard .controlicon {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  justify-content: start;
+  width: 30px;
+  height: 30px;
+}
+
+.controlcard .controltitle,
+.controlpara {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 20px;
+  justify-content: start;
+}
+
+.controlpara {
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
