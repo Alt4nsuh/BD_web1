@@ -18,7 +18,7 @@ import BaiInsert from "../Pages/BaiInsert/BaiInsert";
 
 export const MainRoutes = () => {
   return useRoutes([
-    { path: "/", element: <Home /> },
+    { path: "/Home", element: <Home /> },
 
     { path: "/sign", element: <Sign /> },
     { path: "/Bai", element: <Bai /> },

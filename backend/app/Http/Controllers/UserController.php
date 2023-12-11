@@ -63,7 +63,6 @@ class UserController extends Controller
     public function signup1(Request $request)
     {
         $request->validate([
-            
             'h_ner' => 'required|string|max:255',
             'h_gmail' => 'required|email|unique:users,h_gmail',
             'h_utas' => 'required|string|max:20',
@@ -97,31 +96,31 @@ class UserController extends Controller
         }
 
     }
-    
-public function update(Request $request, $id)
-{
-    // Find the user by ID
-    $user = User::find($id);
 
-    // Check if the user exists
-    if (!$user) {
-        return response()->json(['error' => 'User not found'], 404);
+    public function update(Request $request, $id)
+    {
+        // Find the user by ID
+        $user = User::find($id);
+
+        // Check if the user exists
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        $request->validate([
+            'h_ner' => 'required|string|max:255',
+            'h_utas' => 'required|string|max:255',
+            'h_gmail' => 'required|string"max:255',
+        ]);
+
+        $user->update([
+            'h_ner' => $request->h_ner,
+            'h_utas' => $request->h_utas,
+            'h_gmail' => $request->h_gmail,
+        ]);
+
+        return response()->json($user, 200);
     }
-
-    $request->validate([
-        'h_ner' => 'required|string|max:255',
-        'h_utas' => 'required|string|max:255',
-        'h_gmail' => 'required|email',
-    ]);
-
-    $user->update([
-        'h_ner' => $request->h_ner,
-        'h_utas' => $request->h_utas,
-        'h_gmail' => $request->h_gmial,
-    ]);
-
-    return response()->json($user, 200);
-}
 
 
     public function getUser(Request $request)

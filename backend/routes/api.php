@@ -20,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/signup', [UserController::class, 'signup']);
 
-Route::post('/BaiInsert', [UserController::class, 'signup']);
+Route::post('/BaiInsert', [UserController::class, 'signup1']);
 Route::get('/Bai', [UserController::class, 'index']);
 Route::get('/Bai/{id}', [UserController::class, 'show']);
 
-Route::put('/BaiUpdate/{id}', [UserController::class, 'update']);
+Route::post('/BaiUpdate/{id}', [UserController::class, 'update']);

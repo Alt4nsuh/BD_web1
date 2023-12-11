@@ -120,7 +120,6 @@ function Sign() {
             onChange={handleChange}
           />
           <button type="submit">Бүртгүүлэх</button>
-          <button onClick={()=>{navigator('/BaiInsert')}}>Байгууллагаар бүртгүүлэх</button>
 
           <p>Бүртгэлтэй бол ..</p> <Link className='aLink' to="/login">Нэвтрэх</Link>
         </form>

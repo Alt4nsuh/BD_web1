@@ -12,7 +12,7 @@ function BaiUpdate() {
 
   const fetchBaiData = async () => {
     try {
-      const response = await axios.put(`http://localhost:8000/BaiUpdate/${id}`);
+      const response = await axios.get(`http://localhost:8000/api/Bai/${id}`);
       if (response && response.data) {
         setBai(response.data);
         console.log("hiiii", response.data);
@@ -23,17 +23,18 @@ function BaiUpdate() {
         );
       }
     } catch (error) {
-      console.error("Error retrieving Bai data:", error.message);
+      console.error("Error retrieving Bai data:", error);
     }
   };
 
   const updateBai = async () => {
     try {
-      const response = await axios.put(`http://localhost:8000/BaiUpdate/${id}`, {
+      const baiguullaga = {
         bai_ner: bai.h_ner,
         bai_utas: bai.h_utas,
         bai_gmail: bai.h_gmail,
-      });
+      }
+        const response = await axios.post(`http://localhost:8000/api/BaiUpdate/${id}`, baiguullaga);
 
       if (response && response.data) {
         console.log("Bai updated successfully:", response.data);
@@ -62,6 +63,7 @@ function BaiUpdate() {
         <h1>Байгууллага мэдээлэл шинэчлэх</h1>
         <h3>Байгууллага нэр</h3>
         <input
+        type="text"
           className="putAdd"
           id="bai_ner"
           value={bai.h_ner}
@@ -69,6 +71,7 @@ function BaiUpdate() {
         />
         <h3>Байгууллага Утас</h3>
         <input
+        type="text"
           className="putAdd"
           id="bai_utas"
           value={bai.h_utas}
@@ -76,6 +79,7 @@ function BaiUpdate() {
         />
         <h3>Байгууллага Майл</h3>
         <input
+          type="email"
           className="putAdd"
           id="bai_gmail"
           value={bai.h_gmail}
