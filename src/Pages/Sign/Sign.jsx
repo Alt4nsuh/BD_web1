@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Sign.css';
 
 function Sign() {
@@ -14,7 +14,7 @@ function Sign() {
     password: '',
     password_confirmation: '',
   });
-
+  const navigator = useNavigate();
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -31,7 +31,8 @@ function Sign() {
           },
           body: JSON.stringify(formData),
         });
-  
+        navigator('/login')
+
         const data = await response.json();
         console.log(data);
       } catch (error) {
@@ -45,7 +46,7 @@ function Sign() {
   return (
     <div className="mainSig">
       <div className='contextSig'>
-        <form className='LogForm'>
+        <form className='LogForm' onSubmit={handleRegistration}>
           <input
             className='inputSig'
             type='text'
@@ -118,8 +119,8 @@ function Sign() {
             value={formData.pass_confirmation}
             onChange={handleChange}
           />
-          <button type="button" onClick={handleRegistration}>Бүртгүүлэх</button>
-          <p>Бүртгэлтэй бол ..</p> <Link className='aLink' to="/">Нэвтрэх</Link>
+          <button type="submit">Бүртгүүлэх</button>
+          <p>Бүртгэлтэй бол ..</p> <Link className='aLink' to="/login">Нэвтрэх</Link>
         </form>
       </div>
     </div>

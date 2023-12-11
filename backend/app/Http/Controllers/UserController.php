@@ -11,7 +11,19 @@ class UserController extends Controller
 {
     public function index()
     {
-        // You may add logic for retrieving and returning users here
+        $users = User::all();
+
+        return response()->json($users, 200);
+    }
+    public function show($id)
+    {
+        $user = User::where("id", $id)->first();
+
+        if (!$user) {
+            return response()->json(['error' => 'User not found'], 404);
+        }
+
+        return response()->json($user, 200);
     }
 
     public function store(Request $request)
@@ -63,7 +75,7 @@ class UserController extends Controller
             // Authentication failed
             return response()->json("нууц үг буруу", 404);
         }
-        
+
     }
 
     public function getUser(Request $request)
