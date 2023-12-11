@@ -1,12 +1,13 @@
 import React from "react";
-import Header from "../../Header/Header";
-import SideBar from "../../ProfileSideBar/sideBar";
+// import NemsenTet from "../../ProfileTet/NemsenTet/nemsenTet";
+import SanalTet from "../../ProfileTet/SanalTet/sanalTet";
 
 const Profile = () => {
   return (
     <div>
-      <Header />
-      <SideBar />
+      {/* <Header />
+      <SideBar /> */}
+      <SanalTet />
     </div>
   );
 };

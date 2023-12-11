@@ -11,6 +11,8 @@ import Profile from "../Pages/Profile/Profile/Profile";
 import AddCV from "../Pages/Profile/addCV/AddCV";
 import ControlCV from "../Pages/Profile/controlCV/ControlCV";
 import EditCV from "../Pages/Profile/editCV/EditCV";
+import NemsenTet from "../Pages/ProfileTet/NemsenTet/nemsenTet";
+import SanalTet from "../Pages/ProfileTet/SanalTet/sanalTet";
 import Sign from "../Pages/Sign/Sign";
 import Tetgeleg from "../Pages/Tetgeleg/Tetgeleg";
 import TetgelegDelgerengui from "../Pages/TetgelegDelgerengui/TetgelegDelgerengui";
@@ -37,5 +39,7 @@ export const MainRoutes = () => {
     { path: "/Profile/add-cv", element: <AddCV /> },
     { path: "/Profile/control-cv", element: <ControlCV /> },
     { path: "/Profile/edit-cv", element: <EditCV /> },
+    { path: "/Profile/Added-Scholarship", element: <NemsenTet /> },
+    { path: "/Profile/Suggests", element: <SanalTet /> },
   ]);
 };

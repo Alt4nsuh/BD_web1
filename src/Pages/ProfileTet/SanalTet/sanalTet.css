@@ -1,0 +1,34 @@
+.sanalTet {
+  height: 100%;
+  margin-top: 100px;
+  width: 80%;
+  position: fixed;
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
+  background-color: white;
+  /* overflow-x: hidden; */
+  margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px;
+}
+
+.sanalTet .sanalContents {
+  margin-left: 70px;
+  height: 95%;
+}
+
+.sanalContents .hongololt,
+.zoriulaw {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sanalTet .sanalHeader {
+  margin-left: 90%;
+  margin-bottom: 10px;
+}
