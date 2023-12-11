@@ -24,6 +24,6 @@ export const MainRoutes = () => {
     { path: '/login', element: <Login /> },
     { path: '/Tetgeleg', element: <Tetgeleg /> },
     { path: '/admin', element: <Admin /> },
-    { path: '/TetgelegDelgerengui', element: <TetgelegDelgerengui /> },
+    { path: '/TetgelegDelgerengui/:id', element: <TetgelegDelgerengui /> },
   ]);
 }
