@@ -13,11 +13,11 @@
 }
 
 .leftBar {
-  background-color: #333;
+  background-color: #6DD7FD;
 }
 
 .rightBar {
-  background-color: #555;
+  background-color: #6DD7FD;
 }
 
 .horizontal-section {
@@ -37,6 +37,9 @@
   justify-content: center;
 }
 .inputAdd{
+  width: 150px;
+  height: 150px;
+  padding: 5px;
 }
 .Bai-body h1 {
   margin-bottom: 20px;
@@ -49,7 +52,6 @@
 .Bai-body a {
   text-decoration: none;
   color: #fff;
-  background-color: #133952;
   padding: 8px 16px;
   border-radius: 4
 }

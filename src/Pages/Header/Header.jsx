@@ -29,7 +29,7 @@ function Header() {
           <a href="#zorilgo">Нүүр</a>
           <Link to="/Tetgeleg">Тэтгэлэг</Link>
           <a href="#our-team">Баг</a>
-          {h_type === "hereglegch" && <Link to="/">Хэрэглэгч</Link>}
+          {h_type === "hereglegch" && <Link to="/Profile">Хэрэглэгч</Link>}
           {h_type === "admin" && <Link to="/admin">Админ</Link>}
           {h_type === "" && <Link to="/login">Нэвтрэх</Link>}
         </div>

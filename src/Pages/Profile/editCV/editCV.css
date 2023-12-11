@@ -1,0 +1,55 @@
+.editcv {
+  height: 100%;
+  margin-top: 100px;
+  width: 80%;
+  position: fixed;
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
+  background-color: white;
+  /* overflow-x: hidden; */
+  margin-left: 20%;
+  display: flex;
+  flex-direction: row;
+  padding: 30px 50px;
+}
+
+.bigSpans {
+  width: 100%;
+}
+
+.spans {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 30px;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-left: 50px;
+}
+
+.spans span {
+  padding: 25px 0;
+  width: 90%;
+}
+
+.editbuttons {
+  margin-top: 110px;
+  margin-left: 510px;
+}
+
+.editbuttons button {
+  margin-left: 20px;
+  border: none;
+  background-color: #6dd7fd;
+  color: #111;
+  padding: 10px 60px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.icons {
+  width: 30px;
+  height: 30px;
+}
