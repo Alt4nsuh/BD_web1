@@ -9,10 +9,9 @@
   justify-content: center;
   align-items: center;
 }
-.inputAdd{
-  width: 100%;
-  padding: 5px;
-  margin:5px;
+.putAdd{
+  width: 80%;
+  margin: 5px;
 }
 
 
@@ -30,6 +29,7 @@
   background-color: #61bfe1;
     align-items: center;
   transition: background-color 0.3s;
+  z-index: 9;
 }
 
 .secHead a {
@@ -63,8 +63,23 @@
   height: 580px;
   flex-shrink: 0;
   align-items: center;
+  display: block;
 }
 
+.TetShaardlaga {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right1 {
+  width: 20%; /* Adjust the width as needed */
+}
+.right1 label{
+  display: block;
+}
+.left1 {
+  width: 80%; /* Adjust the width as needed */
+}
 /* Additional styling for TetEronhii, TetShaardlaga, TetMateral, TetHolboo can be added as needed */
  /* Bai.css or your stylesheet */
 

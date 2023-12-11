@@ -1,8 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Tetgeleg.css';
 
+
+
+
 function Tetgeleg() {
+    const [tetgeleg,setTetgeleg] = useState([]);
+
+    useEffect(() => {
+        const fetchTetgelegData = async () => {
+          try {
+            const response = await fetch(
+              `http://localhost:3001/tetgelegShow`,
+              {
+                method: "GET",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              }
+            );
+    
+            if (response && response.ok) {
+              const data = await response.json();
+              setTetgeleg(data);
+              console.log("hiiii", data);
+            } else {
+              console.error(
+                "Error retrieving Tetgeleg data:",
+                response ? response.statusText : "Unknown error"
+              );
+            }
+          } catch (error) {
+            console.error("Error submitting form:", error.message);
+          }
+        };
+          fetchTetgelegData();
+        
+      }, []);
     return (
         <div className='MainHome'>
             <div className='header'>
@@ -14,21 +49,15 @@ function Tetgeleg() {
             </div>
 
             <div className="scholarship-container">
-                <div className="scholarship-box">
-                    <img className="logo" src="organization-logo.png" alt="Organization Logo" />
-                    <div className="scholarship-name">Scholarship Name 1</div>
-                    <div className="end-date">End Date: December 31, 2023</div>
-                    <div className="description">Description of Scholarship 1.</div>
-                </div>
+            {tetgeleg.map((item, index) => (
 
                 <div className="scholarship-box">
-                    <img className="logo" src="organization-logo.png" alt="Organization Logo" />
-                    <div className="scholarship-name">Scholarship Name 2</div>
-                    <div className="end-date">End Date: January 15, 2024</div>
-                    <div className="description">Description of Scholarship 2.</div>
+                    <img className="inputAdd" src={item.tetgeleg_zurag} alt={`Image ${index}`} />
+                    <div className="scholarship-name">{item.tetgeleg_ner}</div>
+                    <div className="end-date">{item.tetgeleg_hugatsaa}</div>
+                    <div className="description">{item.tetgeleg_tuhai}</div>
                 </div>
-
-                {/* Add more scholarship boxes as needed */}
+            ))}
             </div>
 
             <footer>

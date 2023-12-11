@@ -93,13 +93,9 @@ function BaiHuvi() {
           {edit && <button>sda</button>}
         </div>
       </div>
+      
       <Scrollbars
       style={{ height: 300 }}
-      autoHide
-      autoHideTimeout={1000} // Set a timeout value in milliseconds
-      autoHideDuration={200}  // Set a duration value in milliseconds
-      renderTrackHorizontal={(props) => <div {...props} className="track-horizontal" />}
-      renderThumbHorizontal={(props) => <div {...props} className="thumb-horizontal" />}
     >
       <div className="horizontal-section">
         {tetgeleg.map((item, index) => (

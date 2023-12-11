@@ -66,6 +66,22 @@ app.get("/tetgelegShow/:id", async (req, res) => {
     return res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
+
+app.get("/tetgelegShow", async (req, res) => {
+  try {
+    const tetgeleg = await Tetgeleg.find();
+
+    if (!tetgeleg) {
+      return res.status(404).json({ error: "tetgeleg not found" });
+    }
+
+    return res.json(tetgeleg);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 app.listen(3001, () => {
   console.log("Server is Running");
 });

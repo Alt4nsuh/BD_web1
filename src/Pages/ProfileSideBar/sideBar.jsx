@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./sideBar.css";
+import Cookies from "js-cookie";
 
 const sideBar = () => {
+  const logout = () => {
+    Cookies.set("h_type", "");
+    Cookies.set("h_id", "");
+  };
   return (
     <div className="sidebar">
       <div className="barPro">
@@ -24,9 +29,12 @@ const sideBar = () => {
         <a href="#services">Тэтгэлэг</a>
         <a href="#clients">Танид зориулав</a>
         <a href="#contact">Тохиргоо</a>
-      </div>
+        <div></div>
+        </div>
 
-      <button>Гарах</button>
+        <Link to={"/login"} onClick={logout}>Гарах</Link>
+
+
     </div>
   );
 };

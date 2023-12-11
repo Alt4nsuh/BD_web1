@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Bai.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import Cookies from "js-cookie";
 import axios from "axios";
+import { Scrollbars } from "react-custom-scrollbars";
+
 function Bai() {
   const h_id = Cookies.get("h_id");
   const [tetgeleg, setTetgeleg] = useState([]);
@@ -15,6 +17,17 @@ function Bai() {
   const [tawigdahShaardlaga, setTawigdahShaardlaga] = useState([]);
   const [burduulehMaterial, setBurduulehMaterial] = useState([]);
   const [holbooBarih, setHolbooBarih] = useState([]);
+  const navigator = useNavigate();
+
+  const handleCheckboxChange = (value) => {
+    if (hamrahHuree.includes(value)) {
+      setHamrahHuree((prevSelected) =>
+        prevSelected.filter((checkbox) => checkbox !== value)
+      );
+    } else {
+      setHamrahHuree((prevSelected) => [...prevSelected, value]);
+    }
+  };
 
   const handleHolbooBarih = (e, index) => {
     const updatedHolbooBarih = [...holbooBarih];
@@ -105,7 +118,10 @@ function Bai() {
             burduuleh_material: burduulehMaterial,
             holboo_barih: holbooBarih,
           })
-          .then((response) => setTetgeleg())
+          .then((response) => {
+            setTetgeleg(response.data);
+            navigator("/BaiHuvi");
+          })
           .catch((e) => console.log(e));
       } catch (error) {}
     };
@@ -136,14 +152,26 @@ function Bai() {
         <div id="TetEronhii" className="TetEronhii">
           <h1>Тэтгэлгийн ерөнхий мэдээлэл</h1>
           <h3>Тэтгэлгийн нэр</h3>
-          <input className="inputAdd" id="tetgeleg_ner" onChange={handleTetgelegNer}></input>
+          <input
+            className="putAdd"
+            id="tetgeleg_ner"
+            onChange={handleTetgelegNer}
+          ></input>
           <h3>Тэтгэлгийн үргэлжлэх хугацаа</h3>
-          <input className="inputAdd" id="tetgeleg_hugatsaa" onChange={handleTetgelegHugatsaa}></input>
+          <input
+            className="putAdd"
+            id="tetgeleg_hugatsaa"
+            onChange={handleTetgelegHugatsaa}
+          ></input>
           <h3>Тэтгэлгийн тухай</h3>
-          <input className="inputAdd" id="tetgeleg_tuhai" onChange={handleTetgelegTuhai}></input>
+          <input
+            className="putAdd"
+            id="tetgeleg_tuhai"
+            onChange={handleTetgelegTuhai}
+          ></input>
 
           <input
-            className="inputAdd"
+            className="putAdd"
             type="file"
             id="tetgeleg_zurag"
             accept="tetgelegZurag/*"
@@ -157,20 +185,67 @@ function Bai() {
               alt="Selected"
             />
           )}
-        </div>
+        </div>{" "}
+        <h1>Тэтгэлэгт тавигдах шаардлага</h1>
         <div id="TetShaardlaga" className="TetShaardlaga">
-          <h1>Тэтгэлэгт тавигдах шаардлага</h1>
-          <h3>Тавигдах шаардлага нэмэх </h3>{" "}
-          <button onClick={addTawigdahShaardlaga}> + </button>
-          <div id="Shaardlaga">
-            {tawigdahShaardlaga.map((item, index) => (
-              <input
-                className="inputAdd"
-                key={index}
-                type="text"
-                onChange={(e) => handleTawigdahShaardlaga(e, index)}
-              />
-            ))}
+          <div className="right1">
+            <h3>Тавигдах хамрах хүрээ </h3>{" "}
+            <Scrollbars style={{ height: 400, width: 200 }}>
+              <div>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Гадаад"
+                    onChange={() => handleCheckboxChange("Гадаад")}
+                    checked={hamrahHuree.includes("Гадаад")}
+                  />
+                  Гадаад
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Дотоод"
+                    onChange={() => handleCheckboxChange("Дотоод")}
+                    checked={hamrahHuree.includes("Дотоод")}
+                  />
+                Дотоод
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="ЕБС"
+                    onChange={() => handleCheckboxChange("ЕБС")}
+                    checked={hamrahHuree.includes("ЕБС")}
+                  />
+                  ЕБС
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="Их сургууль"
+                    onChange={() => handleCheckboxChange("Их сургууль")}
+                    checked={hamrahHuree.includes("Их сургууль")}
+                  />
+                  Их сургууль
+                </label>
+              </div>
+            </Scrollbars>
+          </div>
+          <div className="left1">
+            <h3>Тавигдах шаардлага нэмэх </h3>{" "}
+            <button onClick={addTawigdahShaardlaga}> + </button>
+            <Scrollbars style={{ height: 400 }}>
+              <div id="Shaardlaga">
+                {tawigdahShaardlaga.map((item, index) => (
+                  <input
+                    className="putAdd"
+                    key={index}
+                    type="text"
+                    onChange={(e) => handleTawigdahShaardlaga(e, index)}
+                  />
+                ))}
+              </div>
+            </Scrollbars>
           </div>
         </div>
         <div id="TetMateral" className="TetMateral">
@@ -179,7 +254,7 @@ function Bai() {
           <div id="Matiral">
             {burduulehMaterial.map((item, index) => (
               <input
-                className="inputAdd"
+                className="putAdd"
                 key={index}
                 type="text"
                 onChange={(e) => handleBurduulehMaterial(e, index)}
@@ -193,7 +268,7 @@ function Bai() {
           <div id="Holboo">
             {holbooBarih.map((item, index) => (
               <input
-                className="inputAdd"
+                className="putAdd"
                 key={index}
                 type="text"
                 onChange={(e) => handleHolbooBarih(e, index)}

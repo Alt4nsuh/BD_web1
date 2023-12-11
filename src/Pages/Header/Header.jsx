@@ -21,7 +21,7 @@ function Header() {
 
           <Link to="/BaiHuvi">Хувийн мэдээлэл шинжлэх</Link>
           <Link to="/Bai">Тэтгэлэг зарлах</Link>
-          <div onClick={logout}><Link to="/">Гарах</Link></div>
+          <div onClick={logout}><Link to="/login">Гарах</Link></div>
         </div>
       ) : (
         <div className="header">
@@ -31,7 +31,7 @@ function Header() {
           <a href="#our-team">Баг</a>
           {h_type === "hereglegch" && <Link to="/Profile">Хэрэглэгч</Link>}
           {h_type === "admin" && <Link to="/admin">Админ</Link>}
-          {h_type === "" && <Link to="/login">Нэвтрэх</Link>}
+          {h_type === "" && <Link to="/login" onClick={logout}>Нэвтрэх</Link>}
         </div>
       )}
     </div>
