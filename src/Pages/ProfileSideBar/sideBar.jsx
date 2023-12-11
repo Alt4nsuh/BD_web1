@@ -1,7 +1,7 @@
+import Cookies from "js-cookie";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./sideBar.css";
-import Cookies from "js-cookie";
 
 const sideBar = () => {
   const logout = () => {
@@ -26,15 +26,17 @@ const sideBar = () => {
           <Link to="/Profile/edit-cv">CV засах</Link>
           <Link to="/Profile/control-cv">CV хянах</Link>
         </div>
-        <a href="#services">Тэтгэлэг</a>
-        <a href="#clients">Танид зориулав</a>
+        <Link to="/Profile/Added-Scholarship">Тэтгэлэг</Link>
+        <Link to="/Profile/Suggests">Танид зориулав</Link>
         <a href="#contact">Тохиргоо</a>
         <div></div>
-        </div>
+      </div>
 
-        <Link to={"/login"} onClick={logout}>Гарах</Link>
-
-
+      <button>
+        <Link to={"/login"} onClick={logout}>
+          Гарах
+        </Link>
+      </button>
     </div>
   );
 };
