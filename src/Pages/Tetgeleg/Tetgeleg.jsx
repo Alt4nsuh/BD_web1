@@ -44,7 +44,7 @@ function Tetgeleg() {
         <a href="#">Тэтгэлэг</a>
         <Link to="/Home#our-team">Баг</Link>
         <Link to="/">Нэвтрэх</Link>
-        <Link to="/">V_2</Link>
+        <Link to="/">V_3</Link>
       </div>
 
       <div className="scholarship-container">
